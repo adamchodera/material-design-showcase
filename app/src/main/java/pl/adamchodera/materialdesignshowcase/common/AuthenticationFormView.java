@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -24,7 +23,7 @@ import pl.adamchodera.materialdesignshowcase.R;
 public class AuthenticationFormView extends ScrollView {
 
     @BindView(R.id.email)
-    AutoCompleteTextView emailView;
+    EditText emailView;
 
     @BindView(R.id.password)
     EditText passwordView;
