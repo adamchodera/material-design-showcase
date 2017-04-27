@@ -38,4 +38,6 @@ public abstract class AuthenticationActivity extends AppCompatActivity {
         progressView.setVisibility(show ? View.VISIBLE : View.GONE);
         formView.setVisibility(show ? View.GONE : View.VISIBLE);
     }
+
+    // TODO implement Snackbar
 }

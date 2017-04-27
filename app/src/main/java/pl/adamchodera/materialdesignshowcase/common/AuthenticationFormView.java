@@ -3,6 +3,7 @@ package pl.adamchodera.materialdesignshowcase.common;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -79,7 +80,13 @@ public class AuthenticationFormView extends ScrollView {
 
     @OnClick(R.id.authenticate_button)
     protected void attemptAuthentication() {
+        if (onAuthenticationAttemptListener == null) {
+            Log.d(getClass().getCanonicalName(), "onAuthenticationAttemptListener == null");
+            return;
+        }
+
         onAuthenticationAttemptListener.onAuthenticationAttempt();
+
     }
 
     private void init() {
@@ -112,7 +119,7 @@ public class AuthenticationFormView extends ScrollView {
         return formValidator.isPasswordValid(email);
     }
 
-    public interface OnAuthenticationAttemptListener {
+    interface OnAuthenticationAttemptListener {
         void onAuthenticationAttempt();
     }
 }

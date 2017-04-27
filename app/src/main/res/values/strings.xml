@@ -11,4 +11,6 @@
 
     <string name="activity_register_button_label">Register</string>
     <string name="activity_login_button_label">Login</string>
+    <string name="activity_login_welcome_text">Welcome back, sign in to continue</string>
+    <string name="activity_register_welcome_text">Register in order to continue!</string>
 </resources>

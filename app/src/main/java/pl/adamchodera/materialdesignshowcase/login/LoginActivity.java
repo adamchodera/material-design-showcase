@@ -8,7 +8,7 @@ import pl.adamchodera.materialdesignshowcase.R;
 import pl.adamchodera.materialdesignshowcase.common.AuthenticationActivity;
 
 /**
- * A screen that offers registration via email & password.
+ * A screen that offers login via email & password.
  */
 public class LoginActivity extends AuthenticationActivity {
 
@@ -18,7 +18,7 @@ public class LoginActivity extends AuthenticationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
         super.initFormView();
@@ -32,6 +32,8 @@ public class LoginActivity extends AuthenticationActivity {
     @Override
     protected void triggerAuthentication() {
         super.showProgress(true);
+
+        // TODO implement login flow
     }
 }
 

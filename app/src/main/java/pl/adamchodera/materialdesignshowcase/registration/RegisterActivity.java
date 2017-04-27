@@ -32,6 +32,8 @@ public class RegisterActivity extends AuthenticationActivity {
     @Override
     protected void triggerAuthentication() {
         super.showProgress(true);
+
+        // TODO implement registration flow
     }
 }
 
