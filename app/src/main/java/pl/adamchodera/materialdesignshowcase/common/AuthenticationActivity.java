@@ -10,8 +10,11 @@ public abstract class AuthenticationActivity extends AppCompatActivity {
 
     @BindView(R.id.progress_bar)
     protected View progressView;
+
     @BindView(R.id.authentication_form)
     protected AuthenticationFormView formView;
+
+    protected abstract String getAuthenticationButtonLabel();
 
     protected abstract void triggerAuthentication();
 
@@ -24,6 +27,8 @@ public abstract class AuthenticationActivity extends AppCompatActivity {
                 }
             }
         });
+
+        formView.setButtonLabel(getAuthenticationButtonLabel());
     }
 
     /**
@@ -33,5 +38,4 @@ public abstract class AuthenticationActivity extends AppCompatActivity {
         progressView.setVisibility(show ? View.VISIBLE : View.GONE);
         formView.setVisibility(show ? View.GONE : View.VISIBLE);
     }
-
 }

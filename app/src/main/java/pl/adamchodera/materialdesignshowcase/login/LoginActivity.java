@@ -1,4 +1,4 @@
-package pl.adamchodera.materialdesignshowcase.registration;
+package pl.adamchodera.materialdesignshowcase.login;
 
 import android.os.Bundle;
 
@@ -10,10 +10,10 @@ import pl.adamchodera.materialdesignshowcase.common.AuthenticationActivity;
 /**
  * A screen that offers registration via email & password.
  */
-public class RegisterActivity extends AuthenticationActivity {
+public class LoginActivity extends AuthenticationActivity {
 
-    @BindString(R.string.activity_register_button_label)
-    String registerButtonLabel;
+    @BindString(R.string.activity_login_button_label)
+    String loginButtonLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class RegisterActivity extends AuthenticationActivity {
 
     @Override
     protected String getAuthenticationButtonLabel() {
-        return registerButtonLabel;
+        return loginButtonLabel;
     }
 
     @Override

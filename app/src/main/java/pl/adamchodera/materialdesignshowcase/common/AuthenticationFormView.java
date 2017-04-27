@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -26,6 +27,9 @@ public class AuthenticationFormView extends ScrollView {
 
     @BindView(R.id.password)
     EditText passwordView;
+
+    @BindView(R.id.authenticate_button)
+    Button authenticateButton;
 
     private AuthenticationFormValidator formValidator;
     private OnAuthenticationAttemptListener onAuthenticationAttemptListener;
@@ -68,7 +72,12 @@ public class AuthenticationFormView extends ScrollView {
         return isEmailValid && isPasswordValid;
     }
 
-    @OnClick(R.id.register_button)
+    public void setButtonLabel(final String authenticationButtonLabel) {
+        authenticateButton.setText(authenticationButtonLabel);
+        passwordView.setImeActionLabel(authenticationButtonLabel, R.id.authenticate);
+    }
+
+    @OnClick(R.id.authenticate_button)
     protected void attemptAuthentication() {
         onAuthenticationAttemptListener.onAuthenticationAttempt();
     }
@@ -82,7 +91,7 @@ public class AuthenticationFormView extends ScrollView {
         passwordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == R.id.authenticate || id == EditorInfo.IME_NULL) {
                     onAuthenticationAttemptListener.onAuthenticationAttempt();
                     return true;
                 }
