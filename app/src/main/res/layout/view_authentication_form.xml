@@ -4,8 +4,7 @@
     android:id="@+id/card_view"
     style="@style/CardViewStyle"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clickable="true">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/view_authentication_form_root"
@@ -26,31 +25,37 @@
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text">
 
-            <EditText
+            <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email_black"
+                android:drawablePadding="@dimen/margin_medium"
                 android:hint="@string/prompt_email"
+                android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:maxLines="1"/>
-
+                android:maxLines="1"
+                android:textCursorDrawable="@color/accent"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text">
 
-            <EditText
+            <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_lock_black"
+                android:drawablePadding="@dimen/margin_medium"
                 android:hint="@string/prompt_password"
                 android:imeActionId="@+id/authenticate"
                 android:inputType="textPassword"
                 android:maxLines="1"/>
-
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
