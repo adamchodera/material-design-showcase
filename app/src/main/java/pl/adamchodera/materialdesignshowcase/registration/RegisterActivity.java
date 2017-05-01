@@ -1,11 +1,13 @@
 package pl.adamchodera.materialdesignshowcase.registration;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import butterknife.BindString;
 import butterknife.ButterKnife;
 import pl.adamchodera.materialdesignshowcase.R;
 import pl.adamchodera.materialdesignshowcase.common.AuthenticationActivity;
+import pl.adamchodera.materialdesignshowcase.login.LoginActivity;
 
 /**
  * A screen that offers registration via email & password.
@@ -27,7 +29,9 @@ public class RegisterActivity extends AuthenticationActivity {
 
     @Override
     public void onFlatButtonClicked() {
-
+        final Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
