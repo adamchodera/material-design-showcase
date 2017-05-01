@@ -12,8 +12,23 @@ import pl.adamchodera.materialdesignshowcase.common.AuthenticationActivity;
  */
 public class LoginActivity extends AuthenticationActivity {
 
-    @BindString(R.string.activity_login_button_label)
+    @BindString(R.string.activity_login_sign_in_button_label)
     String loginButtonLabel;
+
+    @BindString(R.string.activity_login_create_account_button_label)
+    String registerButtonLabel;
+
+    @Override
+    public void onRaisedButtonClicked() {
+        super.showProgress(true);
+
+        // TODO implement login flow
+    }
+
+    @Override
+    public void onFlatButtonClicked() {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +40,13 @@ public class LoginActivity extends AuthenticationActivity {
     }
 
     @Override
-    protected String getAuthenticationButtonLabel() {
+    protected String getRaisedButtonLabel() {
         return loginButtonLabel;
     }
 
     @Override
-    protected void triggerAuthentication() {
-        super.showProgress(true);
-
-        // TODO implement login flow
+    protected String getFlatButtonLabel() {
+        return registerButtonLabel;
     }
 }
 

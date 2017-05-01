@@ -1,16 +1,20 @@
 <resources>
     <string name="app_name">Material Design Showcase</string>
+
+    <!-- Strings related to login and registration screens -->
     <string name="activity_register_title">Sign up</string>
     <string name="activity_login_title">Sign in</string>
 
-    <!-- Strings related to login and registration screens -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="error_invalid_email">Error: email address is invalid</string>
     <string name="error_invalid_password">Error: password is invalid</string>
 
-    <string name="activity_register_button_label">Create account</string>
-    <string name="activity_login_button_label">Login</string>
-    <string name="activity_login_welcome_text">Welcome back, sign in to continue</string>
+    <string name="activity_register_create_account_button_label">Create account</string>
+    <string name="activity_register_login_button_label">Already have an account? Log in</string>
     <string name="activity_register_welcome_text">Sign in</string>
+
+    <string name="activity_login_sign_in_button_label">Login</string>
+    <string name="activity_login_create_account_button_label">Create account</string>
+    <string name="activity_login_welcome_text">Welcome back, sign in to continue</string>
 </resources>

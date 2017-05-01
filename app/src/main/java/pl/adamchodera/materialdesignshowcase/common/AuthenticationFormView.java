@@ -27,11 +27,14 @@ public class AuthenticationFormView extends ScrollView {
     @BindView(R.id.passwordInputLayout)
     TextInputLayout passwordView;
 
-    @BindView(R.id.authenticate_button)
-    Button authenticateButton;
+    @BindView(R.id.raised_button)
+    Button raisedButton;
+
+    @BindView(R.id.flat_button)
+    Button flatButton;
 
     private AuthenticationFormValidator formValidator;
-    private OnAuthenticationAttemptListener onAuthenticationAttemptListener;
+    private OnButtonClickedListener onButtonClickedListener;
 
     public AuthenticationFormView(final Context context) {
         super(context);
@@ -48,8 +51,8 @@ public class AuthenticationFormView extends ScrollView {
         init();
     }
 
-    public void setOnAuthenticationAttemptListener(final OnAuthenticationAttemptListener onAuthenticationAttemptListener) {
-        this.onAuthenticationAttemptListener = onAuthenticationAttemptListener;
+    public void setOnButtonClickedListener(final OnButtonClickedListener onButtonClickedListener) {
+        this.onButtonClickedListener = onButtonClickedListener;
     }
 
     public boolean isValid() {
@@ -71,19 +74,34 @@ public class AuthenticationFormView extends ScrollView {
         return isEmailValid && isPasswordValid;
     }
 
-    public void setButtonLabel(final String authenticationButtonLabel) {
-        authenticateButton.setText(authenticationButtonLabel);
+    public void setRaisedButtonLabel(final String authenticationButtonLabel) {
+        raisedButton.setText(authenticationButtonLabel);
         passwordView.getEditText().setImeActionLabel(authenticationButtonLabel, R.id.authenticate);
     }
 
-    @OnClick(R.id.authenticate_button)
-    protected void attemptAuthentication() {
-        if (onAuthenticationAttemptListener == null) {
-            Log.d(getClass().getCanonicalName(), "onAuthenticationAttemptListener == null");
+    public void setFlatButtonLabel(final String flatButtonLabel) {
+        flatButton.setText(flatButtonLabel);
+    }
+
+    @OnClick(R.id.raised_button)
+    protected void raisedButtonClicked() {
+        if (onButtonClickedListener == null) {
+            Log.d(getClass().getCanonicalName(), "onButtonClickedListener == null");
             return;
         }
 
-        onAuthenticationAttemptListener.onAuthenticationAttempt();
+        onButtonClickedListener.onRaisedButtonClicked();
+
+    }
+
+    @OnClick(R.id.flat_button)
+    protected void flatButtonClicked() {
+        if (onButtonClickedListener == null) {
+            Log.d(getClass().getCanonicalName(), "onButtonClickedListener == null");
+            return;
+        }
+
+        onButtonClickedListener.onFlatButtonClicked();
 
     }
 
@@ -99,7 +117,7 @@ public class AuthenticationFormView extends ScrollView {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.authenticate) {
-                    onAuthenticationAttemptListener.onAuthenticationAttempt();
+                    onButtonClickedListener.onRaisedButtonClicked();
                     return true;
                 }
                 return false;
@@ -119,7 +137,9 @@ public class AuthenticationFormView extends ScrollView {
         return formValidator.isPasswordValid(password, getContext());
     }
 
-    interface OnAuthenticationAttemptListener {
-        void onAuthenticationAttempt();
+    interface OnButtonClickedListener {
+        void onRaisedButtonClicked();
+
+        void onFlatButtonClicked();
     }
 }

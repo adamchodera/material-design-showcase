@@ -41,10 +41,18 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/authenticate_button"
+        android:id="@+id/raised_button"
         style="@style/RaisedButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textColor="@color/white"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/flat_button"
+        style="@style/FlatButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/accent"/>
 </LinearLayout>

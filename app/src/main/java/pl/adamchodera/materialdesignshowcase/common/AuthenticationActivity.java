@@ -6,7 +6,7 @@ import android.view.View;
 import butterknife.BindView;
 import pl.adamchodera.materialdesignshowcase.R;
 
-public abstract class AuthenticationActivity extends AppCompatActivity {
+public abstract class AuthenticationActivity extends AppCompatActivity implements AuthenticationFormView.OnButtonClickedListener {
 
     @BindView(R.id.progress_bar)
     protected View progressView;
@@ -14,21 +14,19 @@ public abstract class AuthenticationActivity extends AppCompatActivity {
     @BindView(R.id.authentication_form)
     protected AuthenticationFormView formView;
 
-    protected abstract String getAuthenticationButtonLabel();
+    public abstract void onRaisedButtonClicked();
 
-    protected abstract void triggerAuthentication();
+    public abstract void onFlatButtonClicked();
+
+    protected abstract String getRaisedButtonLabel();
+
+    protected abstract String getFlatButtonLabel();
 
     protected void initFormView() {
-        formView.setOnAuthenticationAttemptListener(new AuthenticationFormView.OnAuthenticationAttemptListener() {
-            @Override
-            public void onAuthenticationAttempt() {
-                if (formView.isValid()) {
-                    triggerAuthentication();
-                }
-            }
-        });
+        formView.setOnButtonClickedListener(this);
 
-        formView.setButtonLabel(getAuthenticationButtonLabel());
+        formView.setRaisedButtonLabel(getRaisedButtonLabel());
+        formView.setFlatButtonLabel(getFlatButtonLabel());
     }
 
     /**
