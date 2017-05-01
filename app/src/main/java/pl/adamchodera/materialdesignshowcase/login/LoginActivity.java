@@ -7,6 +7,7 @@ import butterknife.BindString;
 import butterknife.ButterKnife;
 import pl.adamchodera.materialdesignshowcase.R;
 import pl.adamchodera.materialdesignshowcase.common.AuthenticationActivity;
+import pl.adamchodera.materialdesignshowcase.dashboard.DashboardActivity;
 import pl.adamchodera.materialdesignshowcase.registration.RegisterActivity;
 
 /**
@@ -24,7 +25,7 @@ public class LoginActivity extends AuthenticationActivity {
     public void onRaisedButtonClicked() {
         super.showProgress(true);
 
-        // TODO implement login flow
+        loginUser();
     }
 
     @Override
@@ -51,6 +52,17 @@ public class LoginActivity extends AuthenticationActivity {
     @Override
     protected String getFlatButtonLabel() {
         return registerButtonLabel;
+    }
+
+    private void loginUser() {
+        // TODO implement login flow
+        goToDashboard();
+    }
+
+    private void goToDashboard() {
+        final Intent intent = new Intent(this, DashboardActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 
