@@ -1,5 +1,6 @@
 package pl.adamchodera.materialdesignshowcase.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import pl.adamchodera.materialdesignshowcase.AboutActivity;
 import pl.adamchodera.materialdesignshowcase.R;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +26,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.activity_about_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,10 +71,16 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            gotToAboutAboutScreen();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void gotToAboutAboutScreen() {
+        final Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
