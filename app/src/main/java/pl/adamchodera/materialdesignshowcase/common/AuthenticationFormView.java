@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -89,6 +88,8 @@ public class AuthenticationFormView extends ScrollView {
     }
 
     private void init() {
+        setFillViewport(true);
+
         final View view = inflate(getContext(), R.layout.view_authentication_form, this);
         ButterKnife.bind(this, view);
 
@@ -97,7 +98,7 @@ public class AuthenticationFormView extends ScrollView {
         passwordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.authenticate || id == EditorInfo.IME_NULL) {
+                if (id == R.id.authenticate) {
                     onAuthenticationAttemptListener.onAuthenticationAttempt();
                     return true;
                 }

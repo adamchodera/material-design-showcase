@@ -1,21 +1,49 @@
 <resources>
 
+    <!--
+        Main app theme
+    -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/window_background</item>
     </style>
 
-    <style name="StandardTextStyle" parent="TextAppearance.AppCompat.Medium">
+    <!--
+        Text styles
+    -->
+    <style name="StandardTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/text_size_standard</item>
-        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="TitleTextStyle" parent="StandardTextStyle">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditTextStyle" parent="StandardTextStyle">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:drawablePadding">@dimen/margin_medium</item>
+        <item name="android:maxLines">1</item>
+
+    </style>
+
+    <!--
+        Button styles
+    -->
     <style name="PrimaryButtonStyle" parent="Widget.AppCompat.Button.Colored">
         <item name="android:colorBackground">@color/accent</item>
     </style>
 
+
+    <!--
+        Other styles
+    -->
     <style name="CardViewStyle" parent="CardView">
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         <item name="android:layout_marginLeft">@dimen/margin_medium</item>

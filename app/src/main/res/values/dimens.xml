@@ -2,6 +2,12 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="appbar_expanded_height">128dp</dimen>
+    <dimen name="appbar_height">56dp</dimen>
+    <dimen name="appbar_title_left_padding">72dp</dimen>
+    <dimen name="appbar_elevation">4dp</dimen>
+
+    <dimen name="margin_big">32dp</dimen>
     <dimen name="margin_standard">16dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
     <dimen name="margin_small">4dp</dimen>
@@ -12,4 +18,5 @@
     <dimen name="text_size_small">12sp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
+    <dimen name="welcome_message_padding_top">72dp</dimen>
 </resources>
