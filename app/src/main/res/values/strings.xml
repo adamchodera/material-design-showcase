@@ -6,8 +6,8 @@
     <!-- Strings related to login and registration screens -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is invalid</string>
+    <string name="error_invalid_email">Error: email address is invalid</string>
+    <string name="error_invalid_password">Error: password is invalid</string>
 
     <string name="activity_register_button_label">Create account</string>
     <string name="activity_login_button_label">Login</string>

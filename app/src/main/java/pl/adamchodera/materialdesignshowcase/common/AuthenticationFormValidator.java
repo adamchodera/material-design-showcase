@@ -1,6 +1,9 @@
 package pl.adamchodera.materialdesignshowcase.common;
 
+import android.content.Context;
 import android.text.TextUtils;
+
+import pl.adamchodera.materialdesignshowcase.R;
 
 public class AuthenticationFormValidator {
 
@@ -13,12 +16,16 @@ public class AuthenticationFormValidator {
         return email.contains("@");
     }
 
-    public boolean isPasswordValid(final String password) {
+    public boolean isPasswordValid(final String password, final Context context) {
         if (TextUtils.isEmpty(password)) {
             return false;
         }
 
         //TODO: Implement better solution
-        return password.length() > 4;
+        final int passwordLength = password.length();
+        final int maxPasswordLength = context.getResources().getInteger(R.integer.password_max_length);
+        final int minPasswordLength = 4;
+
+        return passwordLength >= minPasswordLength && passwordLength <= maxPasswordLength;
     }
 }

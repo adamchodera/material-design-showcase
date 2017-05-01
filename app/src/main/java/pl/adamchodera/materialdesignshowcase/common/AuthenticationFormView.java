@@ -2,12 +2,12 @@ package pl.adamchodera.materialdesignshowcase.common;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -21,11 +21,11 @@ import pl.adamchodera.materialdesignshowcase.R;
  */
 public class AuthenticationFormView extends ScrollView {
 
-    @BindView(R.id.email)
-    EditText emailView;
+    @BindView(R.id.emailInputLayout)
+    TextInputLayout emailView;
 
-    @BindView(R.id.password)
-    EditText passwordView;
+    @BindView(R.id.passwordInputLayout)
+    TextInputLayout passwordView;
 
     @BindView(R.id.authenticate_button)
     Button authenticateButton;
@@ -73,7 +73,7 @@ public class AuthenticationFormView extends ScrollView {
 
     public void setButtonLabel(final String authenticationButtonLabel) {
         authenticateButton.setText(authenticationButtonLabel);
-        passwordView.setImeActionLabel(authenticationButtonLabel, R.id.authenticate);
+        passwordView.getEditText().setImeActionLabel(authenticationButtonLabel, R.id.authenticate);
     }
 
     @OnClick(R.id.authenticate_button)
@@ -95,7 +95,7 @@ public class AuthenticationFormView extends ScrollView {
 
         formValidator = new AuthenticationFormValidator();
 
-        passwordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        passwordView.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.authenticate) {
@@ -108,15 +108,15 @@ public class AuthenticationFormView extends ScrollView {
     }
 
     private boolean isEmailValid() {
-        final String email = emailView.getText().toString();
+        final String email = emailView.getEditText().getText().toString();
 
         return formValidator.isEmailValid(email);
     }
 
     private boolean isPasswordValid() {
-        final String email = passwordView.getText().toString();
+        final String password = passwordView.getEditText().getText().toString();
 
-        return formValidator.isPasswordValid(email);
+        return formValidator.isPasswordValid(password, getContext());
     }
 
     interface OnAuthenticationAttemptListener {
