@@ -22,12 +22,11 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            
+
             <ImageView
                 android:id="@+id/headerImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bg_img"
@@ -48,12 +47,12 @@
     <android.support.design.widget.FloatingActionButton
         style="@style/Widget.Design.FloatingActionButton"
         android:id="@+id/activity_about_fab"
-        android:elevation="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_standard"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/ic_share_white"/>
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_share_white_24dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
