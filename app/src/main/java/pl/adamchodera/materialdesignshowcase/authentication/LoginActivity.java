@@ -1,4 +1,4 @@
-package pl.adamchodera.materialdesignshowcase.registration;
+package pl.adamchodera.materialdesignshowcase.authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,31 +6,30 @@ import android.os.Bundle;
 import butterknife.BindString;
 import butterknife.ButterKnife;
 import pl.adamchodera.materialdesignshowcase.R;
-import pl.adamchodera.materialdesignshowcase.common.AuthenticationActivity;
+import pl.adamchodera.materialdesignshowcase.authentication.common.AuthenticationActivity;
 import pl.adamchodera.materialdesignshowcase.dashboard.DashboardActivity;
-import pl.adamchodera.materialdesignshowcase.login.LoginActivity;
 
 /**
- * A screen that offers registration via email & password.
+ * A screen that offers login via email & password.
  */
-public class RegisterActivity extends AuthenticationActivity {
+public class LoginActivity extends AuthenticationActivity {
 
-    @BindString(R.string.activity_register_create_account_button_label)
-    String registerButtonLabel;
-
-    @BindString(R.string.activity_register_login_button_label)
+    @BindString(R.string.activity_login_sign_in_button_label)
     String loginButtonLabel;
+
+    @BindString(R.string.activity_login_create_account_button_label)
+    String registerButtonLabel;
 
     @Override
     public void onRaisedButtonClicked() {
         super.showProgress(true);
 
-        registerUser();
+        loginUser();
     }
 
     @Override
     public void onFlatButtonClicked() {
-        final Intent intent = new Intent(this, LoginActivity.class);
+        final Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
         finish();
     }
@@ -38,7 +37,7 @@ public class RegisterActivity extends AuthenticationActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
         super.initFormView();
@@ -46,17 +45,16 @@ public class RegisterActivity extends AuthenticationActivity {
 
     @Override
     protected String getRaisedButtonLabel() {
-        return registerButtonLabel;
+        return loginButtonLabel;
     }
 
     @Override
     protected String getFlatButtonLabel() {
-        return loginButtonLabel;
+        return registerButtonLabel;
     }
 
-    private void registerUser() {
-        // TODO implement registration flow
-
+    private void loginUser() {
+        // TODO implement login flow
         goToDashboard();
     }
 

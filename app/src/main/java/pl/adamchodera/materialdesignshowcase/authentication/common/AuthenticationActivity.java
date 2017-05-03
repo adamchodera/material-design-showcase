@@ -1,4 +1,4 @@
-package pl.adamchodera.materialdesignshowcase.common;
+package pl.adamchodera.materialdesignshowcase.authentication.common;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

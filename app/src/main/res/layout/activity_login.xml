@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pl.adamchodera.materialdesignshowcase.login.LoginActivity">
+    tools:context="pl.adamchodera.materialdesignshowcase.authentication.LoginActivity">
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -28,7 +28,7 @@
         android:layout_marginBottom="@dimen/margin_standard"
         android:text="@string/activity_login_welcome_text"/>
 
-    <pl.adamchodera.materialdesignshowcase.common.AuthenticationFormView
+    <pl.adamchodera.materialdesignshowcase.authentication.common.AuthenticationFormView
         android:id="@+id/authentication_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -27,7 +27,7 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone"/>
 
-    <pl.adamchodera.materialdesignshowcase.common.AuthenticationFormView
+    <pl.adamchodera.materialdesignshowcase.authentication.common.AuthenticationFormView
         android:id="@+id/authentication_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

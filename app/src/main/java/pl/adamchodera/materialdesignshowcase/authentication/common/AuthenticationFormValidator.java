@@ -1,4 +1,4 @@
-package pl.adamchodera.materialdesignshowcase.common;
+package pl.adamchodera.materialdesignshowcase.authentication.common;
 
 import android.content.Context;
 import android.text.TextUtils;
