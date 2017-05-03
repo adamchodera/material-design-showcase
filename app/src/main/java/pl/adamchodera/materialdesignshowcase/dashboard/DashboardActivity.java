@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.adamchodera.materialdesignshowcase.AboutActivity;
 import pl.adamchodera.materialdesignshowcase.R;
+import pl.adamchodera.materialdesignshowcase.ShareLinkUtil;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -104,33 +105,32 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 }).show();
     }
 
-    private void gotToAboutAboutScreen() {
-        final Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+        if (id == R.id.nav_fragment_0) {
+            viewPager.setCurrentItem(0);
+        } else if (id == R.id.nav_fragment_1) {
+            viewPager.setCurrentItem(1);
+        } else if (id == R.id.nav_fragment_2) {
+            viewPager.setCurrentItem(2);
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            final ShareLinkUtil shareLinkUtil = new ShareLinkUtil(this);
+            shareLinkUtil.shareLinkToThisApp();
+        } else if (id == R.id.nav_about) {
+            gotToAboutAboutScreen();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void gotToAboutAboutScreen() {
+        final Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 }

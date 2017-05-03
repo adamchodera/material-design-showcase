@@ -3,15 +3,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/fragment_0"
+            android:id="@+id/nav_fragment_0"
             android:icon="@drawable/ic_menu_camera"
             android:title="Fragment 0"/>
         <item
-            android:id="@+id/fragment_1"
+            android:id="@+id/nav_fragment_1"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Fragment 1"/>
         <item
-            android:id="@+id/fragment_2"
+            android:id="@+id/nav_fragment_2"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Fragment 2"/>
     </group>
@@ -23,7 +23,7 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share"/>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_about_black_24dp"
                 android:title="About"/>
         </menu>

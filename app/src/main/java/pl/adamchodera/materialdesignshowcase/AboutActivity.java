@@ -1,30 +1,27 @@
 package pl.adamchodera.materialdesignshowcase;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AboutActivity extends AppCompatActivity {
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.activity_about_fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               shareAppLink();
-            }
-        });
     }
 
     @Override
@@ -37,15 +34,9 @@ public class AboutActivity extends AppCompatActivity {
         }
     }
 
-    private void shareAppLink() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, getLinkToGooglePlay());
-        sendIntent.setType("text/plain");
-        startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_link)));
-    }
-
-    private String getLinkToGooglePlay() {
-        return "Check out this app: https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
+    @OnClick(R.id.activity_about_fab)
+    protected void onFabClicked() {
+        final ShareLinkUtil shareLinkUtil = new ShareLinkUtil(this);
+        shareLinkUtil.shareLinkToThisApp();
     }
 }
