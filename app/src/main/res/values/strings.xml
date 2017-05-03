@@ -114,4 +114,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="share_link">Share link with..</string>
+    <string name="nav_header_user_name">Adam Chodera</string>
+    <string name="nav_header_email">email@example.com</string>
 </resources>
