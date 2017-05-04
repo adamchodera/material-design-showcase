@@ -118,19 +118,27 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         } else if (id == R.id.nav_fragment_2) {
             viewPager.setCurrentItem(2);
         } else if (id == R.id.nav_share) {
-            final ShareLinkUtil shareLinkUtil = new ShareLinkUtil(this);
-            shareLinkUtil.shareLinkToThisApp();
+            shareLinkToThisApp();
         } else if (id == R.id.nav_about) {
             gotToAboutAboutScreen();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        closeDrawer();
         return true;
+    }
+
+    private void shareLinkToThisApp() {
+        final ShareLinkUtil shareLinkUtil = new ShareLinkUtil(this);
+        shareLinkUtil.shareLinkToThisApp();
     }
 
     private void gotToAboutAboutScreen() {
         final Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
+    }
+
+    private void closeDrawer() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".registration.RegisterActivity"
+            android:name=".authentication.RegisterActivity"
             android:label="@string/activity_register_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".authentication.LoginActivity"
             android:label="@string/activity_login_title">
         </activity>
         <activity
