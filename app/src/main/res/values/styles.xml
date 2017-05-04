@@ -11,6 +11,8 @@
     </style>
 
     <style name="AppTheme.TranslucentStatus"/>
+
+
     <!--
         Text styles
     -->
@@ -33,6 +35,7 @@
         <item name="android:maxLines">1</item>
 
     </style>
+
 
     <!--
         Button styles

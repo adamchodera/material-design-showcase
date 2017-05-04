@@ -19,6 +19,6 @@
     <dimen name="raised_button_elevation">2dp</dimen>
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="nav_header_height">180dp</dimen>
     <dimen name="activity_about_app_bar_expanded_height">220dp</dimen>
 </resources>
