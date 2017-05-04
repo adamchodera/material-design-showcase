@@ -4,9 +4,9 @@
         Main app theme
     -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
+        <item name="colorPrimary">@color/theme_primary</item>
+        <item name="colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="colorAccent">@color/theme_accent</item>
         <item name="android:windowBackground">@color/window_background</item>
     </style>
 
@@ -41,7 +41,7 @@
         Button styles
     -->
     <style name="RaisedButtonStyle" parent="Widget.AppCompat.Button.Colored">
-        <item name="android:colorBackground">@color/accent</item>
+        <item name="android:colorBackground">@color/theme_accent</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:minHeight">48dp</item>
         <item name="android:minWidth">88dp</item>

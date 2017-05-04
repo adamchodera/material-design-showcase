@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_authentication_app_bar_expanded_height"
         android:paddingLeft="@dimen/activity_authentication_appbar_title_left_padding"
-        android:background="@color/primary"
+        android:background="@color/theme_primary"
         android:elevation="@dimen/app_bar_elevation"
         android:gravity="bottom"
         android:paddingBottom="@dimen/margin_big"
