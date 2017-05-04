@@ -5,27 +5,27 @@
         <item
             android:id="@+id/nav_fragment_0"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Fragment 0"/>
+            android:title="@string/nav_fragment_0_title"/>
         <item
             android:id="@+id/nav_fragment_1"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Fragment 1"/>
+            android:title="@string/nav_fragment_1_title"/>
         <item
             android:id="@+id/nav_fragment_2"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Fragment 2"/>
+            android:title="@string/nav_fragment_2_title"/>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/nav_subheader_title">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
+                android:title="@string/nav_share_share"/>
             <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_about_black_24dp"
-                android:title="About"/>
+                android:title="@string/nav_about_title"/>
         </menu>
     </item>
 

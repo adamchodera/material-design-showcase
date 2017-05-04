@@ -116,4 +116,10 @@
     <string name="share_link">Share link with..</string>
     <string name="nav_header_user_name">Adam Chodera</string>
     <string name="nav_header_email">email@example.com</string>
+    <string name="nav_fragment_0_title">Fragment 0</string>
+    <string name="nav_fragment_1_title">Fragment 1</string>
+    <string name="nav_fragment_2_title">Fragment 2</string>
+    <string name="nav_subheader_title">Subheader</string>
+    <string name="nav_share_share">Share</string>
+    <string name="nav_about_title">About</string>
 </resources>
