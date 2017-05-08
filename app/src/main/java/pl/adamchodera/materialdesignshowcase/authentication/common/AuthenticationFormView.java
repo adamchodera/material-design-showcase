@@ -91,7 +91,6 @@ public class AuthenticationFormView extends ScrollView {
         }
 
         onButtonClickedListener.onRaisedButtonClicked();
-
     }
 
     @OnClick(R.id.flat_button)
@@ -102,7 +101,6 @@ public class AuthenticationFormView extends ScrollView {
         }
 
         onButtonClickedListener.onFlatButtonClicked();
-
     }
 
     private void init() {

@@ -7,8 +7,9 @@ import android.graphics.BitmapFactory;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 
-public class RoundedImageView extends android.support.v7.widget.AppCompatImageView {
+public class RoundedImageView extends ImageView {
 
     public RoundedImageView(final Context context) {
         super(context);
@@ -17,13 +18,11 @@ public class RoundedImageView extends android.support.v7.widget.AppCompatImageVi
 
     public RoundedImageView(final Context context, AttributeSet arAttributeSet) {
         super(context, arAttributeSet);
-
         init();
     }
 
     public RoundedImageView(Context context, AttributeSet attributeSet, int defStyleAttr) {
         super(context, attributeSet, defStyleAttr);
-
         init();
     }
 

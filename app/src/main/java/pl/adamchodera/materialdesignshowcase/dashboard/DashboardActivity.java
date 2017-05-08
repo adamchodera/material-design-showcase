@@ -57,8 +57,33 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        // set first menu item as selected
+        navigationView.setCheckedItem(R.id.nav_fragment_0);
 
         viewPager.setAdapter(new DashboardPagerAdapter(getSupportFragmentManager()));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(final int position) {
+                if (position == 0) {
+                    navigationView.setCheckedItem(R.id.nav_fragment_0);
+                } else if (position == 1) {
+                    navigationView.setCheckedItem(R.id.nav_fragment_1);
+                } else if (position == 2) {
+                    navigationView.setCheckedItem(R.id.nav_fragment_2);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(final int state) {
+
+            }
+        });
+
         tabLayout.setupWithViewPager(viewPager);
     }
 
@@ -138,7 +163,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     }
 
     private void closeDrawer() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
 }
