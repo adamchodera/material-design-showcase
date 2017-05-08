@@ -52,12 +52,12 @@
                 android:textColor="@color/text_primary"
                 android:textSize="@dimen/text_size_standard" />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/action_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_text"
-                style="?android:attr/borderlessButtonStyle"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:textColor="?attr/colorPrimary"
                 android:text="Action" />
 
