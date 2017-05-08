@@ -17,14 +17,12 @@ public class DashboardPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-//        switch (position) {
-//            case 0:
-//                return DashboardFragment.newInstance(position);
-//            case 1:
-//                return DashboardFragment.newInstance(position);
-//        }
-
-        return DashboardFragment.newInstance(position);
+        switch (position) {
+            case 0:
+                return CardViewFragment.newInstance();
+            default:
+                return DashboardFragment.newInstance(position);
+        }
     }
 
     @Override

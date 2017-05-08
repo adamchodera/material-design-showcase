@@ -31,7 +31,6 @@
 
     <style name="EditTextStyle" parent="StandardTextStyle">
         <item name="android:textSize">@dimen/text_size_big</item>
-        <item name="android:drawablePadding">@dimen/margin_medium</item>
         <item name="android:maxLines">1</item>
 
     </style>
@@ -43,7 +42,7 @@
     <style name="RaisedButtonStyle" parent="Widget.AppCompat.Button.Colored">
         <item name="android:colorBackground">@color/theme_accent</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
-        <item name="android:minHeight">48dp</item>
+        <item name="android:minHeight">68dp</item>
         <item name="android:minWidth">88dp</item>
         <item name="android:layout_marginLeft">@dimen/margin_medium</item>
         <item name="android:layout_marginRight">@dimen/margin_medium</item>
@@ -53,7 +52,7 @@
 
     <style name="FlatButtonStyle" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:textSize">@dimen/text_size_medium</item>
-        <item name="android:minHeight">48dp</item>
+        <item name="android:minHeight">68dp</item>
         <item name="android:minWidth">88dp</item>
         <item name="android:layout_marginLeft">@dimen/margin_medium</item>
         <item name="android:layout_marginRight">@dimen/margin_medium</item>
